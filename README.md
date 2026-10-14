@@ -5,7 +5,7 @@
 
 ## Sobre o trabalho
 
-O tema do grupo é **"Misoginia na área da saúde"**. O trabalho discute como o preconceito de gênero aparece na formação, nos resultados clínicos e no atendimento, por exemplo:
+O tema do trabalho é **"Misoginia na área da saúde"**. Discute como o preconceito de gênero aparece na formação, nos resultados clínicos e no atendimento, por exemplo:
 
 - a manipulação de notas de candidatas em faculdades de medicina japonesas;
 - o enigma do cirurgião ("a cirurgiã é a mãe do menino") e o viés de gênero que ele revela;
