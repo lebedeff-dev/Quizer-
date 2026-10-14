@@ -1,0 +1,145 @@
+/* Jogo na /tela: uma ideia por tela, conteúdo centralizado, texto grande. */
+.jogo { align-items: center; padding: 0 5vw; }
+.jogo .conteudo.coluna { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 4.5vh; }
+.jogo.entra .conteudo { animation: entra .35s ease-out; }
+@keyframes entra { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+.canto-resp { position: fixed; top: 3vh; left: 2.5vw; z-index: 4; margin: 0; font-size: clamp(20px, 1.25vw, 26px); font-weight: 600; color: var(--azul-escuro); }
+.selo-final {
+  position: fixed; top: 2.4vh; left: 50%; transform: translateX(-50%); z-index: 4; margin: 0;
+  background: var(--rosa); color: var(--texto); border-radius: 999px; padding: .35em 1.5em;
+  font-size: clamp(18px, 1.6vw, 34px); font-weight: 800; letter-spacing: .02em; white-space: nowrap;
+}
+.titulo-cena { margin: 0; text-align: center; font-size: clamp(34px, 3.6vw, 76px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; color: var(--texto); }
+.legenda-cena { margin: 0; text-align: center; font-size: clamp(22px, 1.9vw, 40px); font-weight: 600; color: var(--azul-escuro); }
+
+/* pergunta */
+.q-cartao { width: min(84vw, 1700px); padding: clamp(36px, 4.4vw, 90px) clamp(36px, 5vw, 100px); text-align: center; }
+.q-texto { margin: 0; font-size: clamp(44px, 2.8vw, 56px); font-weight: 700; line-height: 1.22; color: var(--texto); text-wrap: balance; }
+.q-menor { margin: 0; width: min(80vw, 1600px); text-align: center; font-size: clamp(22px, 1.9vw, 38px); font-weight: 700; line-height: 1.25; color: var(--texto); text-wrap: balance; }
+
+/* avisos de habilidade */
+.avisos { display: flex; flex-direction: column; gap: 1.4vh; align-items: center; }
+.aviso { margin: 0; display: flex; align-items: center; gap: .9vw; background: var(--amarelo-pastel); border-radius: 999px; padding: .4em 1.4em .4em .5em; font-size: clamp(20px, 1.6vw, 34px); font-weight: 700; color: var(--tinta); }
+.aviso-selo { width: 3.4vw; min-width: 44px; aspect-ratio: 1; border-radius: 999px; background: var(--branco); display: grid; place-items: center; }
+.aviso-selo img { width: 68%; height: 68%; display: block; }
+
+/* alternativas */
+.alts { width: min(88vw, 1780px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 2.2vw, 44px); }
+.alts-poucas { width: min(80vw, 1600px); display: grid; gap: clamp(16px, 1.8vw, 36px); justify-items: center; }
+.alts-poucas.n1 { grid-template-columns: 1fr; }
+.alts-poucas.n2 { grid-template-columns: 1fr 1fr; }
+.alts-poucas.n3 { grid-template-columns: 1fr 1fr 1fr; }
+.alts-poucas .alt { width: 100%; }
+.alt {
+  display: flex; align-items: center; gap: clamp(14px, 1.5vw, 30px);
+  padding: clamp(18px, 1.7vw, 34px) clamp(18px, 2vw, 40px);
+  box-shadow: 10px 10px 0 var(--azul-sombra);
+  min-height: clamp(110px, 11vh, 200px);
+}
+.alt-letra {
+  flex: none; width: clamp(48px, 4.2vw, 84px); aspect-ratio: 1; border-radius: 999px;
+  background: var(--azul); color: var(--sobre-primario); display: grid; place-items: center;
+  font-size: clamp(26px, 2.3vw, 46px); font-weight: 800;
+}
+.alt-texto { flex: 1; font-size: clamp(22px, 2.15vw, 43px); font-weight: 600; line-height: 1.22; color: var(--texto); text-wrap: pretty; }
+.alt.menor .alt-texto { font-size: clamp(20px, 1.8vw, 36px); }
+.alt.menor { min-height: clamp(90px, 9vh, 160px); }
+.alt.grande { width: min(80vw, 1500px); }
+.alt.grande .alt-texto { font-size: clamp(28px, 2.8vw, 56px); font-weight: 700; }
+.alt-rotulo { flex: none; font-size: clamp(18px, 1.5vw, 30px); font-weight: 800; }
+.alt.certa { background: var(--certo); border-color: var(--certo); }
+.alt.errada { background: var(--errado); border-color: var(--errado); }
+.alt.certa .alt-texto, .alt.errada .alt-texto, .alt.certa .alt-rotulo, .alt.errada .alt-rotulo { color: var(--branco); }
+.alt.certa .alt-letra { background: var(--branco); color: var(--certo); }
+.alt.errada .alt-letra { background: var(--branco); color: var(--errado); }
+
+/* janela: pergunta e contagem gigante */
+.q-janela { font-size: clamp(24px, 2.2vw, 44px); }
+.contagem { display: flex; flex-direction: column; align-items: center; }
+.contagem-numero { font-size: min(30vh, 22vw); font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: var(--azul); font-variant-numeric: tabular-nums; }
+.contagem-numero.fim { color: var(--errado); }
+.contagem-legenda { margin: 0; font-size: clamp(22px, 1.9vw, 40px); font-weight: 600; color: var(--azul-escuro); }
+
+/* ordem */
+.ordem-grade { display: grid; gap: clamp(12px, 1.6vh, 24px) clamp(24px, 3vw, 60px); justify-items: stretch; width: min(60vw, 1100px); }
+.ordem-grade.dupla { grid-auto-flow: column; grid-template-rows: repeat(var(--linhas), auto); width: min(90vw, 1760px); }
+.chip-ordem {
+  display: flex; align-items: center; gap: 1.4vw; border-radius: 999px;
+  padding: .55vw 2vw .55vw .7vw; min-height: clamp(64px, 8.4vh, 110px);
+}
+.chip-pos { flex: none; width: clamp(48px, 4.4vw, 84px); aspect-ratio: 1; border-radius: 999px; background: var(--branco); color: var(--tinta); display: grid; place-items: center; font-size: clamp(22px, 2vw, 40px); font-weight: 800; }
+.chip-texto { display: flex; flex-direction: column; min-width: 0; line-height: 1.12; }
+.chip-cor { font-size: clamp(24px, 2.3vw, 46px); font-weight: 800; line-height: 1.1; overflow-wrap: anywhere; }
+.chip-cor.longo { font-size: clamp(20px, 2vw, 40px); }
+.chip-cor.muito-longo { font-size: clamp(18px, 1.7vw, 34px); }
+.ordem-linha { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(16px, 1.8vw, 36px); width: min(90vw, 1760px); }
+.chip-ordem.compacto { min-height: 0; padding: .4vw 1.6vw .4vw .5vw; gap: 1vw; }
+.chip-ordem.compacto .chip-pos { width: clamp(34px, 2.8vw, 56px); font-size: clamp(16px, 1.4vw, 28px); }
+.chip-ordem.compacto .chip-cor { font-size: clamp(18px, 1.6vw, 32px); }
+.chip-ordem.compacto .chip-cor.longo { font-size: clamp(14px, 1.3vw, 26px); }
+.chip-ordem.compacto .chip-cor.muito-longo { font-size: clamp(12px, 1.1vw, 22px); }
+.chip-ordem.atual { outline: .3vw solid var(--azul-escuro); outline-offset: .25vw; }
+
+/* explicação */
+.explicacao { width: min(80vw, 1600px); padding: clamp(26px, 2.8vw, 56px) clamp(30px, 3.4vw, 68px); }
+.explicacao p { margin: 0; font-size: clamp(24px, 2.2vw, 44px); font-weight: 500; line-height: 1.35; color: var(--texto); text-wrap: pretty; }
+
+/* ranking */
+.rank { width: min(78vw, 1500px); display: flex; flex-direction: column; gap: clamp(8px, 1.3vh, 18px); }
+.rank-linha { display: grid; grid-template-columns: 4vw 1fr 5.5vw 15vw; align-items: center; gap: 1.2vw; min-height: clamp(48px, 6.4vh, 84px); }
+.rank-pos { font-size: clamp(22px, 2vw, 40px); font-weight: 800; color: var(--texto); text-align: right; }
+.rank-trilho { height: 100%; }
+.rank-barra { min-height: clamp(48px, 6.4vh, 84px); min-width: 15vw; border-radius: clamp(24px, 3.2vh, 42px); display: flex; align-items: center; padding: .4vh 2vw; white-space: normal; }
+.rank-nome { font-size: clamp(20px, 1.9vw, 38px); font-weight: 800; line-height: 1.1; overflow-wrap: anywhere; min-width: 0; }
+.rank-nome.longo { font-size: clamp(18px, 1.7vw, 34px); }
+.rank-nome.muito-longo { font-size: clamp(16px, 1.45vw, 29px); }
+.rank-lado { display: flex; flex-direction: column; min-width: 0; line-height: 1.15; }
+.rank-pontos { font-size: clamp(24px, 2.4vw, 48px); font-weight: 800; color: var(--texto); font-variant-numeric: tabular-nums; }
+.rank-vence { font-size: clamp(16px, 1.4vw, 28px); font-weight: 800; color: var(--azul-escuro); }
+.rank-linha.vence .rank-barra { outline: .3vw solid var(--azul-escuro); outline-offset: .25vw; }
+
+/* final */
+.c-final .conteudo { gap: 5vh; }
+.c-final .titulo { font-size: clamp(40px, 4.8vw, 100px); text-align: center; }
+.integrantes { list-style: none; margin: 0; padding: 0; width: min(76vw, 1500px); display: grid; grid-template-columns: 1fr 1fr; gap: 2vh clamp(40px, 5vw, 110px); text-align: center; }
+.integrantes li { font-size: clamp(20px, 1.8vw, 36px); font-weight: 600; color: var(--texto); }
+.orientador { margin: 0; font-size: clamp(18px, 1.55vw, 32px); font-weight: 600; color: var(--azul-escuro); text-align: center; }
+
+/* regras */
+.c-regras .titulo { font-size: clamp(38px, 4vw, 84px); text-align: center; }
+.c-regras .conteudo { gap: 3.5vh; }
+.regras-grade { width: min(86vw, 1700px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 2.2vw, 44px); }
+.regra { padding: clamp(22px, 2.2vw, 44px) clamp(26px, 2.6vw, 52px); box-shadow: 10px 10px 0 var(--azul-sombra); }
+.regra h2 { margin: 0 0 .4em; font-size: clamp(24px, 2.1vw, 42px); font-weight: 800; color: var(--azul-escuro); }
+.regra p { margin: 0; font-size: clamp(18px, 1.5vw, 30px); line-height: 1.38; color: var(--texto); }
+
+/* pausado: cobre a cena inteira, sem som */
+.pausado { position: fixed; inset: 0; z-index: 40; background: var(--fundo); display: grid; place-items: center; }
+.pausado-texto { position: relative; margin: 0; font-size: clamp(60px, 9vw, 190px); font-weight: 800; color: var(--azul-escuro); letter-spacing: -0.02em; }
+
+/* 8b-2: alternativa eliminada pela Dica 50/50, pontos negativos e Regras em páginas */
+.alt.eliminada { background: var(--fundo-suave); border: 2px dashed var(--azul-borda); box-shadow: none; opacity: .6; }
+.alt.eliminada .alt-texto { text-decoration: line-through; color: var(--azul-escuro); }
+.alt.eliminada .alt-letra { background: transparent; color: var(--azul-escuro); border: 2px solid var(--azul-escuro); }
+.alt.eliminada .alt-rotulo { color: var(--azul-escuro); }
+.rank-pontos.neg { color: var(--errado); }
+.regras-escada { margin: 0; width: min(86vw, 1700px); text-align: center; font-size: clamp(18px, 1.55vw, 32px); line-height: 1.35; color: var(--texto); }
+.regras-grade.tres { grid-template-columns: repeat(3, 1fr); }
+.regra-hab { padding: clamp(16px, 1.6vw, 32px) clamp(20px, 1.9vw, 38px); }
+.regra-topo { display: flex; align-items: center; gap: clamp(12px, 1.1vw, 22px); margin-bottom: .5em; }
+.regra-topo h2 { margin: 0; }
+.regra-selo { width: clamp(52px, 4.4vw, 88px); aspect-ratio: 1; }
+.regra-hab p { font-size: clamp(17px, 1.4vw, 28px); }
+.regras-pagina { margin: 0; font-size: clamp(16px, 1.2vw, 24px); font-weight: 600; color: var(--azul-escuro); }
+
+/* troféu no 1º colocado do ranking final e placar parcial */
+.rank-barra { position: relative; }
+.rank-trofeu { margin-left: auto; height: calc(clamp(48px, 6.4vh, 84px) * .82); aspect-ratio: 1; flex: none; }
+.rank-trofeu img { width: 78%; height: 78%; object-fit: contain; }
+.rank-linha.placar { grid-template-columns: 4vw 1fr 6vw; }
+.c-placar .rank { width: min(70vw, 1300px); }
+
+.rank-inelegivel { font-size: clamp(14px, 1.2vw, 24px); font-weight: 600; color: var(--azul-escuro); }
+.final-vencedor { display: flex; align-items: center; gap: 1.2vw; border-radius: 999px; padding: .4vw 2.2vw .4vw .5vw; font-size: clamp(22px, 2vw, 42px); font-weight: 800; }
+.final-vencedor .rank-trofeu { height: auto; width: clamp(48px, 4vw, 80px); }

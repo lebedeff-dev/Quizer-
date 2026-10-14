@@ -1,0 +1,36 @@
+/* Habilidades animadas (Bloqueio e Dobro): só CSS, SVG/PNG locais e JS, sem som.
+   Com prefers-reduced-motion, estilos.css desliga toda animação: a cena aparece direto no estado final. */
+
+/* selo branco redondo: o ícone nunca se perde sobre cores escuras ou vermelhas */
+.hab-selo { border-radius: 999px; background: var(--branco); display: grid; place-items: center; flex: none; }
+.hab-selo img { width: 68%; height: 68%; display: block; }
+
+/* ganhar: entra com escala, leve repique e brilho */
+@keyframes hab-entra {
+  0%   { transform: scale(0) rotate(-14deg); opacity: 0; }
+  50%  { transform: scale(1.28) rotate(5deg); opacity: 1; }
+  72%  { transform: scale(.9) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@keyframes hab-brilho {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--amarelo-pastel) 95%, transparent); }
+  100% { box-shadow: 0 0 0 .9em color-mix(in srgb, var(--amarelo-pastel) 0%, transparent); }
+}
+.hab-ganho { animation: hab-entra .75s cubic-bezier(.2, .9, .3, 1) both, hab-brilho 1.2s ease-out .4s 2 both; }
+
+/* em jogo: movimento sutil e contínuo */
+@keyframes hab-flutua { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-6%) rotate(-5deg); } }
+@keyframes hab-pulsa { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+.hab-em-jogo.bloqueio { animation: hab-flutua 2.4s ease-in-out infinite; }
+.hab-em-jogo.dobro { animation: hab-pulsa 1.8s ease-in-out infinite; }
+
+/* some sozinho no fim (usado nas telas cheias de ganho e de ativação) */
+@keyframes hab-vida { 0% { opacity: 0; } 8% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
+
+/* 8b-2: Aposta e Dica 50/50 */
+.hab-em-jogo.aposta { animation: hab-pulsa 1.8s ease-in-out infinite; }
+.hab-em-jogo.dica5050 { animation: hab-flutua 2.4s ease-in-out infinite; }
+
+/* selo da Aposta (SVG): a cor do desenho vem do texto do contexto */
+.hab-selo-svg { color: var(--tinta); }
+.hab-selo-svg svg { width: 68%; height: 68%; display: block; }

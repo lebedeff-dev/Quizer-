@@ -1,0 +1,368 @@
+{
+  "perguntas": [
+    {
+      "id": 1,
+      "tipo": "facil",
+      "enunciado": "O que significa misoginia?",
+      "alternativas": [
+        "Medo de hospitais",
+        "Aversão, desprezo ou preconceito contra mulheres",
+        "Preferência por tratamentos naturais",
+        "Aversão a pessoas idosas"
+      ],
+      "correta": 1,
+      "explicacao": "Misoginia é a aversão ou o preconceito contra mulheres, e pode aparecer até em ambientes de cuidado, como a saúde.",
+      "reserva": false
+    },
+    {
+      "id": 2,
+      "tipo": "facil",
+      "enunciado": "Em faculdades de medicina do Japão, o que foi descoberto?",
+      "alternativas": [
+        "Faltavam professores",
+        "As mensalidades eram dobradas para homens",
+        "Notas de candidatas foram manipuladas para barrar mulheres",
+        "Mulheres eram proibidas de estudar por lei"
+      ],
+      "correta": 2,
+      "explicacao": "Cerca de 9 faculdades manipularam o processo seletivo para limitar o ingresso de mulheres.",
+      "reserva": false
+    },
+    {
+      "id": 3,
+      "tipo": "facil",
+      "enunciado": "Na charada do cirurgião, quem é o cirurgião que diz “não posso operar este menino, ele é meu filho”?",
+      "alternativas": [
+        "O pai adotivo",
+        "O avô",
+        "Um médico homônimo",
+        "A mãe do menino"
+      ],
+      "correta": 3,
+      "explicacao": "O cirurgião é a mãe do menino. Quem estranha a resposta revela um viés inconsciente de gênero.",
+      "reserva": false
+    },
+    {
+      "id": 4,
+      "tipo": "atencao",
+      "enunciado": "No estudo apresentado, quantos pacientes foram analisados?",
+      "alternativas": [
+        "Cerca de 1,2 milhão",
+        "Cerca de 120 mil",
+        "Cerca de 12 milhões",
+        "Cerca de 500 mil"
+      ],
+      "correta": 0,
+      "explicacao": "Foram 1.165.711 pacientes, ou seja, cerca de 1,2 milhão.",
+      "reserva": false
+    },
+    {
+      "id": 5,
+      "tipo": "facil",
+      "enunciado": "No estudo com mais de 1 milhão de pacientes, quem teve resultados melhores?",
+      "alternativas": [
+        "Pacientes operados por cirurgiões",
+        "Pacientes operados por cirurgiãs",
+        "Não houve diferença nenhuma",
+        "Pacientes que escolheram o hospital"
+      ],
+      "correta": 1,
+      "explicacao": "Pacientes de cirurgiãs tiveram menos desfechos adversos, o que desafia a ideia de que mulheres seriam menos capazes.",
+      "reserva": false
+    },
+    {
+      "id": 6,
+      "tipo": "facil",
+      "enunciado": "Qual problema é comum no caminho até o diagnóstico de endometriose?",
+      "alternativas": [
+        "Diagnóstico sempre imediato",
+        "Só afeta mulheres idosas",
+        "Demora de anos para ser diagnosticada",
+        "Não causa dor"
+      ],
+      "correta": 2,
+      "explicacao": "A dor das mulheres costuma ser minimizada, e o diagnóstico pode levar muitos anos.",
+      "reserva": false
+    },
+    {
+      "id": 7,
+      "tipo": "atencao",
+      "enunciado": "Segundo o trabalho, o atraso no diagnóstico da endometriose pode chegar a quantos anos?",
+      "alternativas": [
+        "Até 2 anos",
+        "Até 5 anos",
+        "Até 20 anos",
+        "Até 11 anos"
+      ],
+      "correta": 3,
+      "explicacao": "O atraso pode chegar a até 11 anos entre os primeiros sintomas e o diagnóstico.",
+      "reserva": false
+    },
+    {
+      "id": 8,
+      "tipo": "facil",
+      "enunciado": "Qual atitude é a mais adequada diante da queixa de dor de uma paciente?",
+      "alternativas": [
+        "Escutar com atenção e investigar a causa",
+        "Dizer que é normal e dispensar",
+        "Atribuir a causa ao emocional",
+        "Pedir que volte quando a dor piorar"
+      ],
+      "correta": 0,
+      "explicacao": "Minimizar a dor é parte do problema. Escutar e investigar é o caminho.",
+      "reserva": false
+    },
+    {
+      "id": 9,
+      "tipo": "atencao",
+      "enunciado": "Segundo o trabalho, a endometriose atinge cerca de quantas mulheres?",
+      "alternativas": [
+        "1 em cada 100",
+        "1 em cada 10",
+        "1 em cada 2",
+        "1 em cada 50"
+      ],
+      "correta": 1,
+      "explicacao": "Cerca de 1 em cada 10 mulheres tem endometriose, o que torna o atraso ainda mais grave.",
+      "reserva": false
+    },
+    {
+      "id": 10,
+      "tipo": "facil",
+      "enunciado": "Qual órgão de Zara Altbach colapsou várias vezes?",
+      "alternativas": [
+        "O coração",
+        "O rim",
+        "O pulmão",
+        "O estômago"
+      ],
+      "correta": 2,
+      "explicacao": "O pulmão de Zara colapsou por causa de um pneumotórax relacionado à menstruação.",
+      "reserva": false
+    },
+    {
+      "id": 11,
+      "tipo": "atencao",
+      "enunciado": "Quantas vezes o pulmão de Zara Altbach colapsou antes do diagnóstico?",
+      "alternativas": [
+        "1 vez",
+        "2 vezes",
+        "5 vezes",
+        "3 vezes"
+      ],
+      "correta": 3,
+      "explicacao": "O pulmão colapsou 3 vezes até que o pneumotórax catamenial fosse identificado.",
+      "reserva": false
+    },
+    {
+      "id": 12,
+      "tipo": "facil",
+      "enunciado": "O pneumotórax catamenial está relacionado a quê?",
+      "alternativas": [
+        "À menstruação",
+        "À alimentação",
+        "A uma lesão esportiva",
+        "Ao uso de óculos"
+      ],
+      "correta": 0,
+      "explicacao": "“Catamenial” se refere ao ciclo menstrual: o problema ocorre perto da menstruação.",
+      "reserva": false
+    },
+    {
+      "id": 13,
+      "tipo": "atencao",
+      "enunciado": "O pneumotórax catamenial costuma ocorrer em até quantas horas após a menstruação e em qual lado?",
+      "alternativas": [
+        "Até 72 horas, geralmente no lado direito",
+        "Até 12 horas, geralmente no lado esquerdo",
+        "Até 7 dias, nos dois lados igualmente",
+        "Até 72 horas, geralmente no lado esquerdo"
+      ],
+      "correta": 0,
+      "explicacao": "Costuma ocorrer em até 72 horas após a menstruação, geralmente no pulmão direito.",
+      "reserva": false
+    },
+    {
+      "id": 14,
+      "tipo": "facil",
+      "enunciado": "Qual condição foi diagnosticada em Chakia Bradford?",
+      "alternativas": [
+        "Apendicite",
+        "Gastrite",
+        "Endometriose",
+        "Pedra nos rins"
+      ],
+      "correta": 2,
+      "explicacao": "Chakia foi diagnosticada com endometriose, depois de ter sua queixa pouco valorizada.",
+      "reserva": false
+    },
+    {
+      "id": 15,
+      "tipo": "atencao",
+      "enunciado": "Quantos litros de líquido sanguinolento foram retirados de Chakia Bradford?",
+      "alternativas": [
+        "Cerca de 200 ml",
+        "Cerca de 500 ml",
+        "Cerca de 5 litros",
+        "Cerca de 2 litros"
+      ],
+      "correta": 3,
+      "explicacao": "Foram cerca de 2 litros de líquido sanguinolento, e ela contou que o médico “meio que a ignorou”.",
+      "reserva": false
+    },
+    {
+      "id": 16,
+      "tipo": "facil",
+      "enunciado": "O que Chakia relatou sobre o atendimento inicial?",
+      "alternativas": [
+        "Que o médico meio que a ignorou",
+        "Que foi atendida com urgência",
+        "Que recebeu o diagnóstico correto na hora",
+        "Que foi encaminhada ao especialista no mesmo dia"
+      ],
+      "correta": 0,
+      "explicacao": "Ser ignorada diante de sintomas graves é um exemplo de como a dor feminina é desvalorizada.",
+      "reserva": false
+    },
+    {
+      "id": 17,
+      "tipo": "atencao",
+      "enunciado": "Quantos pacientes do estudo foram tratados por cirurgiãs?",
+      "alternativas": [
+        "Cerca de 15 mil",
+        "Cerca de 151 mil",
+        "Cerca de 500 mil",
+        "Cerca de 1 milhão"
+      ],
+      "correta": 1,
+      "explicacao": "Foram 151.054 pacientes de cirurgiãs contra 1.014.657 de cirurgiões.",
+      "reserva": false
+    },
+    {
+      "id": 18,
+      "tipo": "facil",
+      "enunciado": "O que aconteceu com o estudo sobre a “atratividade” de mulheres com endometriose retovaginal?",
+      "alternativas": [
+        "Ganhou um prêmio",
+        "Virou protocolo oficial",
+        "Foi retratado (retirado da literatura)",
+        "Foi traduzido para 20 línguas"
+      ],
+      "correta": 2,
+      "explicacao": "O estudo, publicado em 2012, foi retratado em 2020.",
+      "reserva": false
+    },
+    {
+      "id": 19,
+      "tipo": "atencao",
+      "enunciado": "Em que anos o estudo “Attractiveness of women with rectovaginal endometriosis” foi publicado e retratado?",
+      "alternativas": [
+        "Publicado em 2000 e retratado em 2005",
+        "Publicado em 2012 e retratado em 2013",
+        "Publicado em 2020 e retratado em 2012",
+        "Publicado em 2012 e retratado em 2020"
+      ],
+      "correta": 3,
+      "explicacao": "Foram 8 anos entre a publicação (2012) e a retratação (2020).",
+      "reserva": false
+    },
+    {
+      "id": 20,
+      "tipo": "facil",
+      "enunciado": "O que o viés inconsciente de gênero pode causar na saúde?",
+      "alternativas": [
+        "Diagnósticos tardios e dor minimizada",
+        "Mais exames desnecessários para homens",
+        "Tratamentos mais rápidos para mulheres",
+        "Nenhum efeito prático"
+      ],
+      "correta": 0,
+      "explicacao": "Estereótipos influenciam a escuta e a decisão do profissional, atrasando o cuidado.",
+      "reserva": false
+    },
+    {
+      "id": 21,
+      "tipo": "atencao",
+      "enunciado": "No estudo, qual foi a taxa de desfechos adversos em 90 dias?",
+      "alternativas": [
+        "4,3%",
+        "14,3%",
+        "25,0%",
+        "2,0%"
+      ],
+      "correta": 1,
+      "explicacao": "Foram 14,3% em 90 dias e 25,0% em 1 ano.",
+      "reserva": false
+    },
+    {
+      "id": 22,
+      "tipo": "facil",
+      "enunciado": "Por que a representatividade de mulheres na medicina e na pesquisa importa?",
+      "alternativas": [
+        "Só por questão de aparência",
+        "Não tem nenhum impacto",
+        "Para reduzir vieses e melhorar o cuidado",
+        "Para diminuir o número de médicos"
+      ],
+      "correta": 2,
+      "explicacao": "Mais diversidade ajuda a reconhecer vieses e a melhorar o atendimento e as pesquisas.",
+      "reserva": false
+    },
+    {
+      "id": 23,
+      "tipo": "atencao",
+      "enunciado": "No estudo, qual foi a taxa de desfechos adversos em 1 ano?",
+      "alternativas": [
+        "14,3%",
+        "4,3%",
+        "2,0%",
+        "25,0%"
+      ],
+      "correta": 3,
+      "explicacao": "Foram 25,0% em 1 ano, contra 14,3% em 90 dias.",
+      "reserva": false
+    },
+    {
+      "id": 24,
+      "tipo": "facil",
+      "enunciado": "Qual é a postura esperada de quem vai trabalhar na saúde frente a esse tema?",
+      "alternativas": [
+        "Reconhecer o viés e combatê-lo no dia a dia",
+        "Ignorar, pois não existe",
+        "Deixar a responsabilidade só para as mulheres",
+        "Esperar que o problema desapareça"
+      ],
+      "correta": 0,
+      "explicacao": "Combater a misoginia na saúde começa por reconhecer os vieses e mudar a prática.",
+      "reserva": false
+    },
+    {
+      "id": 25,
+      "tipo": "atencao",
+      "enunciado": "No estudo, qual percentual morreu em 1 ano?",
+      "alternativas": [
+        "2,0%",
+        "4,3%",
+        "14,3%",
+        "25,0%"
+      ],
+      "correta": 1,
+      "explicacao": "Foram 2,0% de mortes em 90 dias e 4,3% em 1 ano.",
+      "reserva": false
+    },
+    {
+      "id": 26,
+      "tipo": "atencao",
+      "enunciado": "Qual era a idade de Chakia Bradford no caso apresentado?",
+      "alternativas": [
+        "22 anos",
+        "42 anos",
+        "32 anos",
+        "52 anos"
+      ],
+      "correta": 2,
+      "explicacao": "Chakia tinha 32 anos quando buscou atendimento.",
+      "reserva": true
+    }
+  ]
+}

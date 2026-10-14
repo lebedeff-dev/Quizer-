@@ -1,0 +1,70 @@
+/* Sala de espera no /host. Sem decoração além das ondas discretas; só dois níveis de texto nas fichas. */
+.hs { align-items: stretch; justify-content: flex-start; }
+.hs-corpo { padding: 22px 32px 100px; display: flex; flex-direction: column; gap: 20px; width: min(1240px, 100%); margin: 0 auto; }
+
+.hs-topo { display: flex; flex-direction: column; gap: 10px; }
+.hs-comecar {
+  width: 100%;
+  min-height: 84px;
+  border: 2px solid var(--azul-borda);
+  border-radius: 999px;
+  background: var(--azul);
+  color: var(--sobre-primario);
+  font-size: 40px;
+  font-weight: 800;
+  box-shadow: 8px 8px 0 var(--azul-sombra);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.hs-comecar:hover:not([disabled]) { transform: translate(-2px, -2px); box-shadow: 10px 10px 0 var(--azul-sombra); }
+.hs-comecar:active:not([disabled]) { transform: translate(4px, 4px); box-shadow: 4px 4px 0 var(--azul-sombra); }
+/* Desabilitado: azul esmaecido, mas com texto legível, e o motivo logo abaixo. */
+.hs-comecar.desabilitado { background: var(--desab-bg); border-color: var(--desab-borda); color: var(--azul-escuro); box-shadow: none; cursor: not-allowed; }
+.hs-motivo { margin: 4px 4px 0; font-size: 20px; font-weight: 700; color: var(--azul-escuro); }
+.hs-motivo p { margin: 0; }
+.hs-motivo.ok { font-weight: 500; color: var(--texto-corpo); }
+
+.hs-fichas { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.hs-ficha { min-width: 0; }
+.hs-ficha {
+  min-height: 112px;
+  border: 0;
+  border-radius: 20px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+}
+button.hs-ficha { cursor: pointer; }
+button.hs-ficha:hover { outline: 3px solid var(--azul-escuro); outline-offset: 2px; }
+.hs-ficha.sel { outline: 5px solid var(--azul-escuro); outline-offset: 3px; }
+.hs-nome.cor-nome { font-size: min(24px, 14cqw); white-space: nowrap; word-break: keep-all; overflow-wrap: normal; }
+.hs-nome { font-size: 24px; font-weight: 800; line-height: 1.1; overflow-wrap: break-word; max-width: 100%; }
+.hs-estado { font-size: 18px; font-weight: 600; line-height: 1.2; overflow-wrap: anywhere; }
+.hs-botoes { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-top: 4px; }
+.hs-mini { border: 2px solid var(--branco); background: var(--branco); color: var(--tinta); border-radius: 999px; padding: .15em .8em; font-size: 15px; font-weight: 600; }
+.hs-mini:hover { background: var(--cinza-claro); }
+.hs-campo { width: 100%; border: 2px solid var(--branco); border-radius: 12px; padding: .25em .5em; font-size: 17px; color: var(--tinta); background: var(--branco); }
+
+.hs-cartoes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hs-cartao { padding: 18px 22px; display: flex; flex-direction: column; gap: 10px; }
+.hs-cartao h2 { margin: 0; font-size: 22px; font-weight: 700; color: var(--texto); }
+.hs-cartao p { margin: 0; font-size: 17px; }
+.hs-select { width: 100%; border: 2px solid var(--azul-borda); border-radius: 12px; padding: .4em .6em; font-size: 17px; background: var(--superficie); color: var(--texto); }
+.hs-linha { display: flex; gap: 10px; flex-wrap: wrap; }
+.hs-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.hs-chip { border-radius: 999px; padding: .15em .8em; font-size: 15px; font-weight: 700; }
+.hs-nota { font-size: 16px; color: var(--texto-corpo); }
+
+@media (max-width: 1000px) {
+  .hs-fichas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hs-cartoes { grid-template-columns: 1fr; }
+}
+
+.hs-ficha.tem-img { --img-tam: 46px; padding-bottom: calc(12px + var(--img-tam) * .45); }
+.hs-ficha .hs-mini { white-space: nowrap; }
+/* Ficha ocupada: os botões ficam à esquerda do ícone (que fica no canto inferior direito); ficha estreita perde o ícone. */
+.hs-ficha.ocupada .hs-botoes { align-self: flex-start; justify-content: flex-start; max-width: calc(100% - var(--img-tam) - 20px); }
+@container (max-width: 180px) { .hs-ficha .time-img.banner { display: none; } .hs-ficha.ocupada .hs-botoes { align-self: center; justify-content: center; max-width: 100%; } }

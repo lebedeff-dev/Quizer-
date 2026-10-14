@@ -1,0 +1,117 @@
+/* /host no celular (plano B: painel no celular, com PIN). Mesma interface do notebook em coluna única:
+   botão principal fixo no alto, alvos de toque de pelo menos 44 px, rolagem só vertical. */
+@media (max-width: 700px) {
+  html, body { height: auto; }
+  body { overflow-x: hidden; }
+
+  /* ---------- painel do jogo ---------- */
+  .hj-jogo { height: auto; min-height: 100vh; min-height: 100dvh; overflow: visible; }
+  .hj-corpo { height: auto; padding: 8px 12px 20px; gap: 12px; width: 100%; }
+
+  .hj-barra { flex-wrap: wrap; gap: 8px; min-height: 0; }
+  .hj-fase { font-size: 20px; }
+  .hj-info { font-size: 15px; }
+  .hj-espaco, .hj-tecla { display: none; }
+  .hj-quebra { display: block; flex-basis: 100%; height: 0; }
+  /* menu e fase na primeira linha; os botões ocupam a segunda, todos do mesmo tamanho */
+  .hj-menu, .hj-btn { min-height: 44px; font-size: 16px; padding: .2em .8em; }
+  .hj-btn { flex: 1 1 0; }
+  .hj-barra .btn-tema { margin-left: auto; }
+  .hj-selo { font-size: 14px; }
+  .hj-tempo { font-size: 22px; }
+
+  /* botão principal sempre à vista ao rolar */
+  .hj-principal { position: sticky; top: 0; z-index: 5; background: var(--fundo); padding: 6px 0 8px; box-shadow: 0 6px 0 var(--fundo); }
+  .hj-grande { min-height: 76px; font-size: 26px; padding: 0 12px; line-height: 1.15; box-shadow: 6px 6px 0 var(--azul-sombra); }
+  .hj-principal.estatico, .hj-principal:has(.hj-abcd) { position: static; box-shadow: none; padding: 0; }
+  .hj-atalho { display: none; } /* a barra de espaço só existe com teclado */
+  .hj-motivo { font-size: 16px; }
+
+  .hj-abcd { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hj-alt { min-height: 84px; padding: 6px 10px; gap: 8px; }
+  .hj-alt-letra { width: 44px; height: 44px; font-size: 26px; }
+  .hj-alt-texto { font-size: 14px; -webkit-line-clamp: 3; }
+  .hj-alt.errada .hj-alt-texto { font-size: 17px; }
+
+  .hj-meio { grid-template-columns: 1fr; gap: 14px; flex: none; }
+  .hj-unico { flex: none; }
+  .hj-cartao { overflow: visible; box-shadow: 6px 6px 0 var(--azul-sombra); }
+  .hj-linha-botoes { gap: 8px; }
+  .hj-linha-botoes .btn-secundario { flex: 1 1 0; min-height: 52px; font-size: 16px; padding: .3em .6em; white-space: nowrap; }
+  .hj-linha { padding: 8px; min-height: 44px; }
+  .hj-enunciado { font-size: 18px !important; }
+
+  /* grupos: uma coluna, cartão em duas linhas legíveis */
+  .hg-grade { grid-template-columns: 1fr !important; gap: 10px; }
+  .hg-cartao { padding: 10px 12px; gap: 6px; }
+  .hg-hab { flex-wrap: wrap; white-space: normal; }
+  .hg-ativar { min-height: 40px; padding: .2em 1.4em; font-size: 16px; }
+  .hg-tag { font-size: 15px; }
+  .hg-pontos { font-size: 28px; }
+
+  /* ranking: duas linhas por grupo */
+  .hr-linha { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; padding: 8px 10px; }
+  .hr-linha .hj-cor { order: 1; }
+  .hr-pos { order: 0; width: 2em; }
+  .hr-pontos { order: 2; margin-left: auto; font-size: 24px; }
+  .hr-elegivel { order: 4; min-height: 44px; flex: 1 1 auto; }
+  .hr-linha > span:last-child { order: 5; }
+  .hr-elegivel input { width: 26px; height: 26px; }
+  .hj-rodape { justify-content: stretch; }
+  .hj-rodape .btn-secundario { flex: 1; min-height: 52px; }
+
+  .hj-opcao { min-height: 72px; padding: 10px 12px; }
+  .hj-passe-btn { align-self: stretch; min-height: 52px; }
+  .hg-item { font-size: 16px; padding: 3px 6px 3px 3px; }
+
+  /* janelas de decisão */
+  .hj-veu { align-items: start; overflow-y: auto; padding: 16px 0; }
+  .hj-modal { padding: 20px 18px; margin: auto 0; }
+  .hj-modal .hj-linha-botoes .btn-secundario, .hj-modal .btn-pilula.pequeno { flex: 1 1 0; min-height: 52px; }
+  .hj-alvo { min-height: 60px; }
+
+  /* ---------- telas de entrada ---------- */
+  /* capa: a mancha rosa e as cruzes do lado direito cobririam o texto em tela estreita */
+  .capa .fundo svg:nth-child(3), .capa .fundo svg:nth-child(4), .capa .fundo svg:nth-child(5) { display: none; }
+  .hs-corpo { padding: 12px 12px 8px; gap: 14px; }
+  /* a seta Voltar fica no fim da página, no fluxo: nunca cobre fichas nem botões ao rolar */
+  .hs .avanco.voltar { position: static; margin: 8px 12px 24px; flex: none; }
+  .hs-comecar { min-height: 76px; font-size: 32px; }
+  .hs-motivo { font-size: 17px; }
+  .hs-fichas { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hs-ficha { min-height: 110px; }
+  .hs-mini { min-height: 40px; padding: .2em 1em; }
+  .hs-cartoes { grid-template-columns: 1fr; gap: 16px; }
+  .hs-cartao .btn-secundario { min-height: 48px; }
+  .menu .fundo svg:nth-child(1), .menu .fundo svg:nth-child(2) { display: none; } /* as cruzes cairiam atrás do título */
+  .menu .conteudo { padding: 64px 16px 28px; } /* espaço para o alternador de tema no topo */
+  .menu .titulo { font-size: 34px; }
+  button.opcao { padding: 18px; }
+  .painel.pin { padding: 24px 20px; }
+  .campo-pin { font-size: 40px; }
+  .painel .btn-secundario { min-height: 52px; }
+  .avanco { width: 56px; height: 56px; }
+  /* o alternador de tema rola junto com a página (nunca fica fixo sobre campos e botões) */
+  .btn-tema.fixo { position: absolute; top: 12px; right: 14px; }
+}
+
+/* 8b-2: Aposta e Dica 50/50 no celular */
+@media (max-width: 700px) {
+  .hj-modal-largo { width: 100%; }
+  .hj-cobranca ul { font-size: 16px; }
+  .hg-apostar { min-height: 40px; }
+  .hj-opcao-selo { width: 40px; height: 40px; }
+}
+
+/* Etapa 8k-1b: no celular os cartões da sala (Rede, Teste) nunca passam da largura da tela; o endereço quebra a linha. */
+@media (max-width: 700px) {
+  .hs-cartoes { grid-template-columns: minmax(0, 1fr); }
+  .hs-cartao { min-width: 0; }
+  .hs-cartao .mc-item { flex-wrap: wrap; min-width: 0; max-width: 100%; }
+  .hs-cartao .menu-celular code { overflow-wrap: anywhere; font-size: 14px; }
+  .hr-linha .hr-cor { flex: 1 1 9em; min-width: 5em; }
+}
+
+@media (max-width: 700px) {
+  .hr-comemorar-btn { width: 100%; min-height: 52px; justify-content: center; }
+}

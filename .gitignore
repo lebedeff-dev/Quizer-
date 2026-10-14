@@ -1,0 +1,28 @@
+# Claude Code (não subir)
+CLAUDE.md
+.claude/
+
+# Dependências e builds
+node_modules/
+dist/
+out/
+release/
+logs/
+*.log
+
+# Dados de execução (contêm PIN e estado do jogo)
+data/jogo.json
+data/registro.json
+data/seguranca.json
+data/config.json
+data/backup/
+
+# Capturas de tela de revisão e arquivos de referência
+capturas/
+referencia/
+docs/tigrinho-original.png
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.zip

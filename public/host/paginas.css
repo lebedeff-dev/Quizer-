@@ -1,0 +1,84 @@
+/* Configurações e Registro (/host). Mesmos cartões e variáveis do resto do painel. */
+.menu-extra { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+.pg { align-items: stretch; justify-content: flex-start; min-height: 100vh; height: auto; }
+.pg-corpo { width: min(1240px, 100%); margin: 0 auto; padding: 24px 32px 110px; display: flex; flex-direction: column; gap: 18px; }
+.pg-topo { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding-right: 70px; }
+.pg-topo h1 { margin: 0; font-size: 34px; font-weight: 800; line-height: 1.1; color: var(--texto); }
+.pg-baixar { margin-left: auto; font-size: 16px; padding: .35em 1.2em; text-decoration: none; display: inline-block; }
+
+.pg-grade { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+.pg-cartao { padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; }
+.pg-cartao h2 { margin: 0; font-size: 22px; font-weight: 800; color: var(--texto); }
+.pg-campos.dois { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+.pg-campo { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.pg-campo label { font-size: 16px; font-weight: 700; color: var(--texto); line-height: 1.25; }
+.pg-campo input, .pg-campo textarea {
+  width: 100%; border: 2px solid var(--azul-borda); border-radius: 14px; padding: .4em .7em;
+  font-size: 18px; line-height: 1.4; background: var(--superficie); color: var(--texto);
+}
+.pg-campo textarea { resize: vertical; min-height: 9em; }
+.pg-campos { display: flex; flex-direction: column; gap: 18px; }
+.pg-entrada { display: flex; align-items: center; gap: 10px; }
+.pg-entrada input { width: 7em; flex: none; }
+.pg-unidade { font-size: 17px; font-weight: 600; color: var(--texto-corpo); }
+.pg-campo select { width: 100%; border: 2px solid var(--azul-borda); border-radius: 14px; padding: .4em .7em; font-size: 18px; background: var(--superficie); color: var(--texto); }
+.pg-dica { margin: 0; font-size: 15px; color: var(--texto-corpo); line-height: 1.3; }
+.pg-nota { margin: 0; font-size: 16px; font-weight: 600; color: var(--azul-escuro); background: var(--fundo-suave); border-radius: 14px; padding: .5em .8em; }
+.pg-rodape { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.pg-rodape .btn-secundario { font-size: 17px; padding: .45em 1.3em; }
+.pg-status { font-size: 17px; font-weight: 700; color: var(--azul-escuro); }
+
+.rg-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.rg-chip { border: 2px solid var(--azul-borda); background: var(--superficie); color: var(--azul-escuro); border-radius: 999px; padding: .2em 1em; font-size: 16px; font-weight: 600; }
+.rg-chip.ligado { background: var(--azul-escuro); color: var(--sobre-primario); }
+.rg-cartao { padding: 10px 14px; }
+.rg-lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.rg-linha { display: grid; grid-template-columns: 82px 96px 14px 1fr; align-items: baseline; gap: 12px; padding: 6px 4px; border-bottom: 1px solid var(--fundo-suave); font-size: 16px; }
+.rg-hora { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--azul-escuro); }
+.rg-tipo { font-size: 14px; font-weight: 700; color: var(--azul-escuro); background: var(--fundo-suave); border-radius: 999px; padding: 0 .7em; text-align: center; }
+.rg-cor { width: 14px; height: 14px; border-radius: 999px; display: block; align-self: center; }
+.rg-cor.vazio { background: transparent; }
+.rg-msg { color: var(--texto); line-height: 1.35; }
+.rg-vazio { font-size: 17px; padding: 10px 4px; color: var(--texto-corpo); }
+
+@media (max-width: 900px) {
+  .pg-corpo { padding: 14px 14px 20px; }
+  .pg-topo h1 { font-size: 28px; }
+  .pg-grade { grid-template-columns: 1fr; gap: 20px; }
+  .pg-campos.dois { grid-template-columns: 1fr; }
+  .pg-campo input, .pg-campo textarea { font-size: 18px; min-height: 48px; }
+  .pg-rodape .btn-secundario, .pg-rodape .btn-pilula { flex: 1 1 100%; min-height: 52px; }
+  .pg-baixar { margin-left: 0; min-height: 44px; }
+  .rg-linha { grid-template-columns: 70px 1fr; row-gap: 2px; }
+  .rg-tipo { justify-self: start; }
+  .rg-cor { display: none; }
+  .rg-msg { grid-column: 1 / -1; }
+  .pg .avanco.voltar { position: static; margin: 4px 14px 24px; }
+}
+
+/* conexão: endereço e PIN do painel no celular, aviso sem rede, dica do firewall */
+.menu-celular { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 18px; font-size: 16px; color: var(--texto-corpo); }
+.mc-rotulo { font-weight: 700; color: var(--azul-escuro); }
+.mc-item { display: inline-flex; align-items: center; gap: 8px; }
+.mc-sem { font-style: italic; }
+.menu-celular code { font-family: Consolas, 'Courier New', monospace; font-size: 17px; font-weight: 700; background: var(--fundo-suave); color: var(--texto); border-radius: 8px; padding: .1em .5em; }
+.btn-mini { border: 2px solid var(--azul-borda); background: var(--superficie); color: var(--azul-escuro); border-radius: 999px; padding: .1em .9em; font-size: 15px; font-weight: 600; }
+.btn-mini:hover { background: var(--fundo-suave); }
+.dica-fw { margin: 0; font-size: 15px; color: var(--texto-corpo); text-align: center; }
+.aviso-rede {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 18px; max-width: min(900px, 92vw);
+  background: var(--amarelo-pastel); color: var(--tinta); border-radius: 22px; padding: .7em 1.3em; font-size: 17px; line-height: 1.4;
+}
+.aviso-rede p { margin: 0; }
+.aviso-rede .btn-secundario { font-size: 16px; padding: .4em 1.2em; color: var(--tom-amarelo-azul); border-color: var(--tom-amarelo-azul); background: var(--branco); }
+.hs-topo .aviso-rede { align-self: stretch; max-width: none; justify-content: flex-start; }
+.hs-cartao .menu-celular { justify-content: flex-start; font-size: 15px; gap: 6px 14px; margin-top: 4px; }
+.hs-cartao .mc-rotulo { flex-basis: 100%; }
+
+.pg-campo select { width: 100%; border: 2px solid var(--azul-borda); border-radius: 14px; padding: .4em .7em; font-size: 18px; background: var(--superficie); color: var(--texto); }
+
+.pg-parabens { display: flex; flex-direction: column; gap: 8px; }
+.pg-parabens-linha { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; flex-wrap: wrap; }
+.pg-contador { font-size: 15px; font-weight: 600; color: var(--texto-corpo); }
+.pg-parabens-linha .btn-secundario { font-size: 16px; padding: .35em 1.1em; }

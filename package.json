@@ -1,0 +1,71 @@
+{
+  "name": "oficina-gamificada",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quizer: jogo de perguntas com celular como botão (buzzer) silencioso, para oficina em sala",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "app": "electron .",
+    "empacotar": "electron-builder --win portable --x64 && node scripts/pos-build.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^5.0.0",
+    "express": "^4.19.2",
+    "qrcode": "^1.5.3",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3",
+    "playwright-core": "^1.64.0"
+  },
+  "author": "Grupo Misoginia na área da saúde (UCB)",
+  "build": {
+    "appId": "br.ucb.quizer",
+    "productName": "Quizer",
+    "copyright": "Oficina Misoginia na área da saúde",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "asar": true,
+    "npmRebuild": false,
+    "compression": "normal",
+    "electronLanguages": [
+      "pt-BR",
+      "en-US"
+    ],
+    "files": [
+      "main.js",
+      "preload.js",
+      "server.js",
+      "package.json",
+      "src/**/*",
+      "public/**/*",
+      "data/perguntas.json",
+      "build/icon.ico",
+      "!node_modules/@fontsource/poppins/files/**/*",
+      "node_modules/@fontsource/poppins/files/poppins-latin-@(400|500|600|700|800)-normal.woff2"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "Quizer.${ext}"
+    },
+    "portable": {
+      "artifactName": "Quizer.exe"
+    }
+  }
+}

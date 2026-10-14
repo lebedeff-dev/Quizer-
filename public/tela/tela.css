@@ -1,0 +1,94 @@
+/* /tela (projetor): leitura de longe, uma ideia por tela, conteúdo centralizado na vertical. */
+.sala-corpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
+  padding: 0 4vw;
+}
+.sala-titulo {
+  margin: 0;
+  font-size: clamp(34px, 3.6vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--texto);
+  text-align: center;
+}
+.sala-aviso { margin: 0; font-size: clamp(20px, 1.6vw, 34px); font-weight: 500; color: var(--texto-corpo); text-align: center; }
+
+.blocos {
+  display: grid;
+  /* 5 colunas x 2 linhas sempre dentro da tela (margem de 4vw, pelo menos 41 px a partir de 1024 px) */
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.5vw;
+  width: min(92vw, 1840px);
+}
+.teste-grade { display: flex; flex-wrap: wrap; justify-content: center; }
+.teste-grade .bloco { width: 17vw; }
+
+/* Bloco de cor: fundo sólido (nunca com transparência) e texto preto ou branco calculado. */
+.bloco {
+  /* altura fixa pela largura da coluna (proporção 5:4), sem aspect-ratio: com ele, texto alto aumentava a largura mínima e empurrava a grade para fora da tela */
+  height: min(13.8vw, 25vh);
+  min-width: 0;
+  min-height: 0;
+  border-radius: 28px;
+  padding: 1.2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .6vw;
+  text-align: center;
+}
+.bloco-nome { font-size: clamp(22px, 2.9vw, 60px); font-weight: 800; line-height: 1.05; overflow-wrap: break-word; max-width: 100%; }
+.bloco-nome.cor-nome { font-size: min(clamp(22px, 2.9vw, 60px), 17cqw); white-space: nowrap; word-break: keep-all; overflow-wrap: normal; }
+.bloco-nome.medio { font-size: min(clamp(24px, 2.9vw, 60px), 14.5cqw); }
+.bloco-nome.longo { font-size: min(clamp(18px, 2.1vw, 42px), 11cqw); }
+.bloco-nome.muito-longo { font-size: min(clamp(15px, 1.65vw, 33px), 10cqw); }
+.bloco-estado { font-size: clamp(16px, 1.45vw, 30px); font-weight: 600; line-height: 1.2; text-wrap: balance; overflow-wrap: anywhere; }
+.bloco.ultimo { outline: .5vw solid var(--azul-escuro); outline-offset: .4vw; }
+
+/* Esmaece as outras cores com um véu branco por cima (os blocos continuam sólidos por baixo). */
+.veu { position: fixed; inset: 0; z-index: 2; background: var(--veu); }
+.qr-cartao {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: clamp(300px, 27vw, 560px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.6vw;
+  /* O QR precisa de fundo claro para ser lido: o cartão fica branco nos dois temas. */
+  background: var(--branco);
+  color: var(--tinta);
+}
+.qr-faixa { align-self: stretch; padding: .9vw 1vw; font-size: min(clamp(26px, 3vw, 62px), 15cqw); font-weight: 800; line-height: 1.1; white-space: nowrap; word-break: keep-all; overflow-wrap: normal; }
+.qr-img { display: block; width: 84%; height: auto; margin: 1.6vw 0 1vw; image-rendering: pixelated; }
+.qr-texto { margin: 0; font-size: clamp(20px, 1.9vw, 40px); font-weight: 700; color: var(--tinta); }
+
+/* Piscada na cor do grupo que apertou: só visual, sem som. */
+.piscada {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  font-size: 9vw;
+  font-weight: 800;
+  animation: piscar .65s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes piscar { 0% { opacity: 1; } 55% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .piscada { display: none; } }
+
+/* imagens decorativas dos times (Etapa 8k): o texto tem prioridade; o bloco reserva o espaço do ícone embaixo */
+.bloco.tem-img { --img-tam: clamp(34px, min(4vw, 6.5vh), 66px); padding-bottom: calc(1.2vw + var(--img-tam) * .75); }
+.qr-faixa { position: relative; }
+.qr-faixa.tem-img { --img-tam: clamp(30px, 3.4vw, 60px); padding-right: calc(var(--img-tam) + 16px); padding-left: calc(var(--img-tam) + 16px); }

@@ -1,0 +1,81 @@
+/* Animações das habilidades na /tela. */
+
+/* ativação em tela cheia: ~2 s, sobre a cor do grupo */
+.ativacao {
+  position: fixed; inset: 0; z-index: 60; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4vh;
+  animation: hab-vida var(--dur, 2.2s) ease both;
+}
+.ativacao-selo { width: min(26vw, 46vh); aspect-ratio: 1; }
+/* texto direto sobre a cor de fundo, preto ou branco (cor definida por contraste em animacoes.js); sempre opaco.
+   Só o ícone fica em selo branco. */
+.ativacao-texto { margin: 0; font-size: clamp(30px, 3.4vw, 72px); font-weight: 800; text-align: center; letter-spacing: -0.01em; }
+
+/* Bloqueio: o ícone cai sobre a cor do alvo, com dois repiques */
+.ativacao.bloqueio .ativacao-selo { animation: ativ-cai 1.35s cubic-bezier(.35, 0, .5, 1) both; }
+@keyframes ativ-cai {
+  0%   { transform: translateY(-110vh) scale(1.5) rotate(-24deg); }
+  52%  { transform: translateY(0) scale(1) rotate(0); }
+  64%  { transform: translateY(-7vh); }
+  76%  { transform: translateY(0); }
+  86%  { transform: translateY(-2.2vh); }
+  100% { transform: translateY(0); }
+}
+
+/* Dobro: o "x2" surge e pulsa três vezes */
+.ativacao.dobro .ativacao-selo, .ativacao.escudo .ativacao-selo { animation: ativ-surge .6s cubic-bezier(.2, .9, .3, 1) both, hab-pulsa .55s ease-in-out .6s 3; }
+@keyframes ativ-surge { 0% { transform: scale(0) rotate(-20deg); } 60% { transform: scale(1.2) rotate(4deg); } 100% { transform: scale(1) rotate(0); } }
+/* Passe: o ícone desliza da direita e para */
+.ativacao.passe .ativacao-selo { animation: ativ-desliza .8s cubic-bezier(.2, .9, .3, 1) both; }
+@keyframes ativ-desliza { 0% { transform: translateX(70vw) rotate(14deg); } 70% { transform: translateX(-3vw) rotate(-3deg); } 100% { transform: none; } }
+.ativacao-sub { margin: -2vh 0 0; font-size: clamp(20px, 2vw, 42px); font-weight: 600; text-align: center; }
+.ativacao.bloqueio .ativacao-texto, .ativacao.dobro .ativacao-texto, .ativacao.escudo .ativacao-texto, .ativacao.passe .ativacao-texto { animation: ativ-texto .5s ease-out .5s both; }
+@keyframes ativ-texto { from { transform: translateY(6vh); } to { transform: none; } } /* só desliza: nunca fica translúcido */
+
+/* ganhos e dobro na explicação */
+.habs-desfecho { display: flex; flex-wrap: wrap; justify-content: center; gap: 2vw; }
+.hab-pilula {
+  display: flex; align-items: center; gap: 1vw; border-radius: 999px;
+  padding: .45vw 2vw .45vw .5vw; font-size: clamp(20px, 1.8vw, 36px); font-weight: 800;
+}
+.hab-pilula .hab-selo { width: clamp(48px, 4vw, 80px); aspect-ratio: 1; }
+.hab-pilula .dp-valor { font-size: 1.25em; font-variant-numeric: tabular-nums; min-width: 2.2em; }
+.hab-pilula .dp-seta { font-weight: 600; opacity: 1; }
+
+/* habilidades em jogo na ordem e na resposta */
+.habs-rodada { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.6vw; }
+.hab-rodada {
+  display: flex; align-items: center; gap: .8vw; background: var(--amarelo-pastel); color: var(--tinta);
+  border-radius: 999px; padding: .3vw 1.6vw .3vw .4vw; font-size: clamp(18px, 1.5vw, 30px); font-weight: 700;
+}
+.hab-rodada .hab-selo { width: clamp(40px, 3.2vw, 64px); aspect-ratio: 1; }
+
+/* Aposta e Dica 50/50: o ícone surge e pulsa, como o Dobro */
+.ativacao.aposta .ativacao-selo, .ativacao.dica5050 .ativacao-selo { animation: ativ-surge .6s cubic-bezier(.2, .9, .3, 1) both, hab-pulsa .55s ease-in-out .6s 3; }
+.ativacao.aposta .ativacao-texto, .ativacao.dica5050 .ativacao-texto { animation: ativ-texto .5s ease-out .5s both; }
+
+/* ---------- comemoração no projetor (Etapa 8k-2) ---------- */
+.comem-fogos { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 55; pointer-events: none; }
+/* Banner no centro: cor do grupo vencedor, borda escura e sombra sólida, como os cartões do jogo. O ícone da cor fica inteiro
+   dentro do banner (altura 70%, à direita), e o texto reserva o espaço dele. */
+.comem-banner {
+  position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 56; isolation: isolate;
+  width: min(78vw, 1500px); min-height: 34vh; box-sizing: border-box;
+  display: flex; flex-direction: column; justify-content: center; gap: 1.2vh;
+  padding: 4vh 27% 4vh 4vw;
+  border: .45vw solid var(--azul-escuro); border-radius: 28px; box-shadow: 1.1vw 1.1vw 0 var(--azul-sombra);
+  font-family: 'Poppins', sans-serif; text-align: left; animation: comem-entra .5s cubic-bezier(.2, .9, .3, 1) both;
+}
+.comem-banner[data-cor="preto"] { box-shadow: inset 0 0 0 .2vw var(--contorno, #616161), 1.1vw 1.1vw 0 var(--azul-sombra); }
+.comem-titulo { margin: 0; font-size: clamp(32px, 4.8vw, 96px); font-weight: 800; line-height: 1.05; overflow-wrap: break-word; }
+.comem-titulo.medio { font-size: clamp(30px, 4.6vw, 92px); }
+.comem-titulo.longo { font-size: clamp(26px, 3.6vw, 72px); }
+.comem-titulo.muito-longo { font-size: clamp(22px, 2.8vw, 56px); }
+.comem-pontos { margin: 0; font-size: clamp(22px, 2.6vw, 52px); font-weight: 600; }
+@keyframes comem-entra { from { opacity: 0; transform: translate(-50%, -44%) scale(.92); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .comem-banner { animation: none; } }
+
+/* camada escura atrás dos fogos (8k-2b): abaixo dos fogos (55) e do banner (56), que ficam nítidos */
+.comem-escuro { position: fixed; inset: 0; z-index: 54; pointer-events: none; background: rgba(15, 20, 35, 0.72); opacity: 0; transition: opacity .4s ease; }
+.comem-escuro.ligado { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .comem-escuro { transition: none; } }

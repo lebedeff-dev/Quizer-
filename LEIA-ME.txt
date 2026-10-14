@@ -1,0 +1,168 @@
+﻿QUIZER — LEIA-ME DO DIA DA APRESENTAÇÃO
+=========================================
+
+O Quizer.exe é o jogo da oficina "Misoginia na área da saúde".
+Não precisa instalar nada, nem Node, nem internet. Só o Quizer.exe e o projetor.
+
+
+ANTES (de preferência no dia anterior, no ensaio)
+-------------------------------------------------
+1. Copie o Quizer.exe para uma pasta do notebook (por exemplo, Documentos\Quizer).
+   Evite rodar direto do pen drive.
+2. Ao lado do Quizer.exe o programa cria sozinho duas pastas:
+   - data : perguntas, jogo, configurações, registro e o PIN
+   - logs : arquivos de diagnóstico (só servem se algo der errado)
+3. Na primeira vez entram 26 perguntas provisórias. Para colocar as definitivas:
+   Menu > "Criar e editar perguntas" > "Importar JSON".
+
+
+NO DIA, PASSO A PASSO
+---------------------
+1. LIGAR A REDE
+   - Ligue o roteador Wi-Fi simples (não precisa ter internet).
+   - Conecte o notebook nele. Os celulares dos grupos também.
+   - O Wi-Fi da sala só deve ser usado se tiver sido testado antes: muitas
+     redes isolam os aparelhos uns dos outros e o celular não abre a página.
+   - Marque a rede do roteador como "Privada": Configurações > Rede e
+     Internet > Wi-Fi (ou Ethernet) > Propriedades da rede > "Privada". Se
+     estiver como "Pública", o Firewall do Windows bloqueia os celulares.
+   - Nos celulares dos grupos, DESLIGUE OS DADOS MÓVEIS (4G/5G): senão o
+     celular pode tentar sair pela operadora e não achar o notebook.
+   - No celular do responsável, mantenha a TELA SEMPRE LIGADA (desative o
+     bloqueio e o desligamento automático da tela), para o painel não perder
+     a conexão no meio da aula.
+   - O hotspot do Windows aceita no máximo 8 aparelhos. Com 8 grupos mais o
+     seu celular não há margem. Use só se não houver roteador.
+
+2. LIGAR O PROJETOR
+   - Conecte o cabo HDMI.
+   - Aperte as teclas Windows + P e escolha "Estender".
+
+3. ABRIR O QUIZER
+   - Dê dois cliques em Quizer.exe e espere uns 5 a 10 segundos.
+   - Abrem duas janelas: o PAINEL (no notebook) e o PROJETOR (em tela cheia
+     no projetor). Se o projetor ainda não estava ligado, a janela do projetor
+     abre normal no notebook: ela vai sozinha para o projetor quando ele for
+     detectado (ou arraste-a e aperte F11).
+   - Na primeira vez o Windows pode mostrar dois avisos. Os dois são normais:
+     a) "O Windows protegeu o computador" (SmartScreen), porque o programa não
+        é assinado: clique em "Mais informações" e depois em "Executar assim
+        mesmo".
+     b) Firewall do Windows: marque "Redes privadas" e clique em "Permitir
+        acesso". Sem isso os celulares não conseguem entrar.
+
+4. COMEÇAR
+   - No painel: Iniciar > "Criar novo jogo".
+   - Clique numa cor. O QR code aparece grande no projetor.
+   - O grupo escaneia com a câmera do celular, digita o NOME DO GRUPO
+     (aparece em todas as telas no lugar do nome da cor) e o bloco fica conectado. Repita para cada grupo (mínimo 2).
+   - Use "Ligar modo teste" para conferir os botões (nada vale ponto).
+   - Clique em "Começar".
+
+5. ABRIR O PAINEL NO SEU CELULAR (opcional)
+   - No Menu do painel (e na sala de espera, no cartão "Rede") aparecem o
+     endereço "Painel no celular" e o PIN de 4 números, com o botão "Copiar".
+     Isso aparece com ou sem o QR dos grupos na tela.
+   - No celular, ligado no mesmo roteador, abra esse endereço no navegador e
+     digite o PIN. Serve de plano B se o projetor falhar.
+   - No notebook não precisa de PIN.
+
+6. DURANTE O JOGO
+   - Barra de espaço: avança.   A, B, C, D: escolhem a alternativa.
+   - P: pausa.   T: troca entre tema claro e noturno.
+   - "Desfazer" volta até 20 passos. O ranking, o desempate e a tela final
+     seguem o roteiro do painel.
+
+7. HABILIDADES, APOSTA, PLACAR E ORDEM DAS PERGUNTAS
+   - Habilidades: o grupo escolhe a habilidade no celular; o responsável
+     confirma o alvo do Bloqueio (janela "Pedido de Bloqueio" no painel:
+     Confirmar ou Recusar; a janela de 30 s não abre com pedido pendente).
+     Se um celular travar, use os botões do painel "No lugar do grupo".
+     Regras: os ACERTOS SEGUIDOS viram moeda (contador de 0 a 7). O grupo
+     troca os acertos por uma habilidade quando quiser, antes da janela de 30 s:
+     3 acertos = Bloqueio, Escudo ou Passe; 5 = e Dobro; 7 = e Dica 50/50.
+     Trocar zera o contador. Cada grupo faz no máximo
+     3 trocas por jogo (Menu > Configurações > "Trocas por grupo no jogo"). No celular: botão "Trocar acertos por habilidade".
+     No painel (reserva): "No lugar do grupo: Comprar habilidade". Cada grupo guarda até 2 e usa 1 por rodada.
+   - No celular do grupo, as habilidades guardadas e a Aposta são chips que se
+     tocam na linha "Você tem:". Chip apagado: ao tocar, mostra o motivo.
+   - Aposta: botão "Apostar" no cartão do grupo, antes da janela de 30 s. Dois
+     modos: trocar 2 habilidades ou pagar 10 pontos. O painel mostra o que será
+     cobrado. Só é cobrada se o grupo responder. Os pontos podem ficar negativos.
+   - Dica 50/50: quando o 2º a responder tem a Dica, o painel pergunta se o
+     grupo quer usá-la.
+   - Placar parcial: a cada 7 respondidas a /tela mostra o placar depois da
+     explicação (seta amarela ou botão do painel continua). Ajuste em
+     Menu > Configurações > "Placar parcial" (desligado, a cada N, toda rodada).
+   - Cores e desenhos: as 10 cores são pastel (a antiga Marrom virou Preto). Cada
+     cor tem um desenho discreto no painel, no projetor e no celular. A força do
+     desenho está em Configurações > Aparência (0 desliga).
+   - Tema: escolha o tema antes de começar o jogo e deixe fixo; ao alternar, todos os
+     celulares mudam junto (o celular não tem botão de tema). No tema noturno o time
+     Preto aparece como Branco; o painel avisa quando o tema muda.
+   - Comemorar: no Ranking, com o vencedor definido, aperte "Comemorar" no painel.
+     O projetor mostra fogos e o banner "Parabéns, [nome do grupo]!" (fica até avançar);
+     os celulares mostram um pop-up com a mensagem (Configurações > Capa e tela final).
+     Sem vencedor o botão fica desabilitado. Pode apertar de novo para repetir.
+   - Aleatorizar ordem (editor): pode ser usado quantas vezes quiser; "Desfazer ordem"
+     volta à ordem de antes. A nova ordem vale a partir do próximo jogo iniciado.
+   - Pontos: só mudam por resposta certa (com bônus) e pela Aposta. Não há mais
+     botões de mais e menos; para corrigir um engano de clique use Desfazer.
+   - Aleatorizar ordem: no editor de perguntas, botão "Aleatorizar ordem" (só
+     fora de partida; guarda cópia em data/backup e tem "Desfazer ordem").
+   - Ranking final: o troféu aparece ao lado do(s) grupo(s) em 1º lugar.
+   - Regras na tela: botão "Regras" do painel; "Próxima página" passa pelas 3.
+
+   - Troféu: vai para o grupo que realmente vence (maior pontuação entre os
+     ELEGÍVEIS; no empate, depois do desempate). Quem não é elegível aparece com
+     "não elegível".
+   - Tigrinho: quem fica 3 rodadas seguidas sem pontuar (e pode apostar) recebe
+     no celular uma mensagem do Tigrinho convidando para uma Aposta. Some em
+     10 segundos, ao tocar no X ou ao abrir a janela de 30 s. O painel mostra
+     "3 sem pontuar" no cartão do grupo.
+
+8. ENCERRAR
+   - Menu > "Encerrar" (ou feche a janela do painel e confirme).
+   - O jogo fica salvo. Na próxima vez: Menu > "Continuar jogo".
+
+
+BACKUP
+------
+Copie a pasta "data" inteira (ela fica ao lado do Quizer.exe) para um pen drive
+antes e depois da oficina. Para levar só as perguntas a outro computador, use
+"Exportar JSON" no editor de perguntas.
+
+
+SE ALGO FALHAR
+--------------
+- O celular não abre o endereço do QR:
+    * O celular está no mesmo roteador do notebook?
+    * A rede do roteador está como "Privada" (Configurações > Rede e
+      Internet)? Em "Pública" o Firewall bloqueia os celulares.
+    * Os dados móveis do celular estão desligados?
+    * Você marcou "Redes privadas" no Firewall? (Se negou sem querer: Painel de
+      Controle > Firewall do Windows > "Permitir um aplicativo" > Quizer).
+    * O endereço do QR está certo? Na sala de espera, cartão "Rede": escolha o
+      IP da rede do roteador.
+- Aparece "Sem rede local" no painel:
+    * O notebook não está em nenhuma rede. Ligue o roteador e conecte o
+      notebook. No painel há o botão "Abrir hotspot do Windows" (limite de 8
+      aparelhos). O aviso some sozinho quando a rede volta.
+- O projetor não mostra a tela do jogo:
+    * Windows + P > "Estender". Se fechou a janela do projetor sem querer:
+      Menu do painel > "Reabrir tela do projetor".
+- Um celular travou ou saiu da página: recarregue a página nele. Ele volta
+  sozinho ao mesmo grupo. Enquanto isso o grupo só não responde na rodada.
+- Errou um clique ou uma alternativa: botão "Desfazer".
+- A porta 3100 estava ocupada: o programa usa a próxima livre (3101...). O
+  endereço certo já aparece no painel.
+- O programa não abre: abra a pasta "logs" ao lado do Quizer.exe e mostre o
+  arquivo mais recente a quem for ajudar. Feche o Quizer pelo Gerenciador de
+  Tarefas e abra de novo; o jogo continua de onde parou.
+- Abrir o Quizer.exe de novo com ele já aberto apenas traz a janela para a
+  frente (não abre um segundo jogo).
+
+
+SOBRE SOM E INTERNET
+--------------------
+O jogo não emite nenhum som e não usa a internet em nenhum momento.
